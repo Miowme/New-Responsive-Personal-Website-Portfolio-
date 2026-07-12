@@ -1,5 +1,4 @@
-import { Button } from "@/components/Button";
-import { ArrowRight, ChevronDown, Download } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
@@ -84,10 +83,16 @@ export const Hero = () => {
             </div>
 
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
-              </Button>
-              <AnimatedBorderButton>
+              <AnimatedBorderButton
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/docs/CV_WilliamSusanto.pdf";
+                  link.download = "CV_WilliamSusanto.pdf";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+              >
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>

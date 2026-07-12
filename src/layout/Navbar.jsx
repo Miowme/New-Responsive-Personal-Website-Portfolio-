@@ -6,7 +6,7 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
-  { href: "#testimonials", label: "Testimonials" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export const Navbar = () => {
@@ -52,12 +52,6 @@ export const Navbar = () => {
               </a>
             ))}
           </div>
-        </div>
-
-        <div className="hidden md:block">
-          <Button size="sm" onClick={() => setIsMenuOpen(false)}>
-            Contact Me
-          </Button>
         </div>
 
         <button
